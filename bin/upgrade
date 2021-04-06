@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+	sudo $0
+else
+	apt update
+	apt upgrade
+	apt autoremove -y
+	apt autoclean -y
+fi
