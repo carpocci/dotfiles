@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install zsh git toilet
+sudo apt install zsh git figlet toilet
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
