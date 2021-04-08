@@ -110,4 +110,4 @@ if [ -d $HOME/.dotfiles/bin ]; then export PATH="$HOME/.dotfiles/bin:${PATH}"; f
 if [ -e ~/.zshrc.local ]; then source ~/.zshrc.local; fi
 
 # Print a nice looking hostname banner :)
-toilet -f slant -F gay $(hostname)
+toilet -t -f slant -F gay $(hostname)
