@@ -34,7 +34,7 @@ esac
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-[ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.$(date +%Y-%m-%d-%H:%S)
+[ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.$(date +%Y-%m-%d-%H:%M:%S)
 
 ln -nfs ~/.dotfiles/zsh/zshrc ~/.zshrc
 
