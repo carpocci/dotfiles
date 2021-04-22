@@ -1,0 +1,5 @@
+# Add user's bin directory to path if it exists
+[ -d $HOME/bin ] && export PATH="$HOME/bin:${PATH}"
+
+# Add dotfiles bin directory to path if it exists
+[ -d $HOME/.dotfiles/bin ] && export PATH="$HOME/.dotfiles/bin:${PATH}"

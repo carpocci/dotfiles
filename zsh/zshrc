@@ -91,20 +91,10 @@ export LANG=it_IT.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="editor ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Add user's bin directory to path if it exists
-if [ -d $HOME/bin ]; then export PATH="$HOME/bin:${PATH}"; fi
-
-# Add dotfiles bin directory to path if it exists
-if [ -d $HOME/.dotfiles/bin ]; then export PATH="$HOME/.dotfiles/bin:${PATH}"; fi
+# Source aliases, functions
+for dotfile in $(find ~/.dotfiles/system); do
+    [ -f "$dotfile" ] && source "$dotfile"
+done
 
 # Source local configurations
 if [ -e ~/.zshrc.local ]; then source ~/.zshrc.local; fi

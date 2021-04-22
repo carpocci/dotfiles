@@ -1,0 +1,4 @@
+alias zshconfig="editor ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias rr="rm -rf"
