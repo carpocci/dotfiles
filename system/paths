@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Add user's bin directory to path if it exists
 [ -d $HOME/bin ] && export PATH="$HOME/bin:${PATH}"
 

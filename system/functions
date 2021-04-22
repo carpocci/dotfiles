@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 oldify() {
     for file in $@; do
         cp "$file" "$file".$(date +%Y-%m-%d-%H:%M:%S)
