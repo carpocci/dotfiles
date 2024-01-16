@@ -1,7 +1,7 @@
 #!/bin/bash
 
 managers=("apt" "yum") # supported managers
-dependencies=("zsh" "figlet" "toilet")
+dependencies=("zsh" "figlet" "toilet" "tmux")
 
 find-manager() {
     for manager in "${managers[@]}"; do
@@ -32,17 +32,20 @@ case $(find-manager) in
     ;;
 esac
 
+# install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-
+# create symlinks for config files
 for file in $(ls -A ~/.dotfiles/conf_files); do
     [ -f ~/$file ] && mv ~/$file ~/$file.$(date +%Y-%m-%d-%H:%M:%S)
     ln -sv ~/.dotfiles/conf_files/$file ~
 done
-
 
 echo "Changing login shell to zsh..."
 chsh -s $(which zsh)
 
 # set up a global gitignore file
 git config --global core.excludesfile ~/.global_gitignore
+
+# install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
