@@ -34,12 +34,15 @@ esac
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-[ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.$(date +%Y-%m-%d-%H:%M:%S)
 
-ln -nfs ~/.dotfiles/zsh/zshrc ~/.zshrc
+for file in $(ls -A ~/.dotfiles/conf_files); do
+    [ -f ~/$file ] && mv ~/$file ~/$file.$(date +%Y-%m-%d-%H:%M:%S)
+    ln -sv ~/.dotfiles/conf_files/$file ~
+done
+
 
 echo "Changing login shell to zsh..."
 chsh -s $(which zsh)
 
 # set up a global gitignore file
-git config --global core.excludesfile ~/.dotfiles/.global_gitignore
+git config --global core.excludesfile ~/.global_gitignore
