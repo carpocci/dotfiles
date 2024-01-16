@@ -40,3 +40,6 @@ ln -nfs ~/.dotfiles/zsh/zshrc ~/.zshrc
 
 echo "Changing login shell to zsh..."
 chsh -s $(which zsh)
+
+# set up a global gitignore file
+git config --global core.excludesfile ~/.dotfiles/.global_gitignore
