@@ -100,4 +100,5 @@ done
 if [ -e ~/.zshrc.local ]; then source ~/.zshrc.local; fi
 
 # Print a nice looking hostname banner :)
+echo ""
 toilet -t -f slant -F gay $(hostname)
