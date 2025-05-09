@@ -1,7 +1,7 @@
 #!/bin/bash
 
 managers=("apt" "yum") # supported managers
-dependencies=("zsh" "figlet" "toilet" "tmux")
+dependencies=("curl" "zsh" "figlet" "toilet" "tmux")
 
 find-manager() {
     for manager in "${managers[@]}"; do
