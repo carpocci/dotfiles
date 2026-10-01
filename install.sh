@@ -49,3 +49,6 @@ git config --global core.excludesfile ~/.global_gitignore
 
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+mkdir -p ~/.tmux/plugins/catppuccin
+git clone https://github.com/catppuccin/tmux.git ~/.tmux/plugins/catppuccin/tmux

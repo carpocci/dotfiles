@@ -6,3 +6,4 @@ alias zshconfig="editor ~/.zshrc"
 alias rr="rm -rf"
 alias sl="sl -e"
 alias t="tmux attach || tmux"
+alias please='sudo $(fc -ln -1)'
